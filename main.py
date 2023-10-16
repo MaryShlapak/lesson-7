@@ -16,3 +16,22 @@ def power(user_number, user_pow_num):
     return user_number * power(user_number, user_pow_num - 1)
 result = power(user_number, user_pow_num)
 print(f"The power of {user_number} = ", result)
+
+# Завдання 2.
+
+# Написати рекурсивну функцію, яка виводить N зірок у ряд, число N задає користувач.
+# Проілюструйте роботу функції прикладом. (Протестувати)
+
+def draw_stars(user_input):
+    if user_input > 0:
+        print("*", end=" ")
+        draw_stars(user_input - 1)
+
+try:
+    user_input = int(input("Enter stars number: "))
+    if user_input <= 0:
+        print("Enter positive number")
+    else:
+        draw_stars(user_input)
+except ValueError:
+    print("Enter numbers only")
